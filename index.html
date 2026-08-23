@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Fredbear's Family Diner: Night Shift</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scanlines" aria-hidden="true"></div>
+
+  <main id="game">
+    <section id="menu" class="screen active center">
+      <h1>FREDBEAR'S FAMILY DINER</h1>
+      <p class="subtitle">Easy Mode • Fan-made night shift</p>
+      <button id="newGame">NEW GAME</button>
+      <button id="continueGame">CONTINUE</button>
+      <button id="soundToggle">SOUND: ON</button>
+    </section>
+
+    <section id="office" class="screen">
+      <header class="hud">
+        <span id="night">Night 1</span>
+        <span id="time">12 AM</span>
+        <span id="power">Power 100%</span>
+      </header>
+
+      <div class="phonePanel" id="phonePanel">
+        <div>
+          <strong>PHONE</strong>
+          <span id="phoneStatus">Waiting...</span>
+        </div>
+        <button id="skipCall" type="button">SKIP CALL</button>
+      </div>
+
+      <div class="officeScene">
+        <aside class="doorPanel">
+          <div class="doorFrame">
+            <div id="leftDoorVisual" class="metalDoor"></div>
+            <div id="leftVisitor" class="doorVisitor">FREDBEAR</div>
+          </div>
+          <button id="leftLight">LEFT LIGHT</button>
+          <button id="leftDoor">LEFT DOOR: OPEN</button>
+          <div id="leftGlow" class="hallGlow"></div>
+        </aside>
+
+        <section class="deskArea">
+          <div class="officeBackWall">
+            <div class="poster">FREDBEAR'S<br>FAMILY DINER</div>
+            <div class="wallNote">EMPLOYEES ONLY</div>
+            <div class="clockFace">12</div>
+          </div>
+
+          <div class="deskTop">
+            <div class="fan" aria-hidden="true">✦</div>
+            <div class="phone" aria-hidden="true">☎</div>
+            <div class="papers" aria-hidden="true">▱ ▱ ▱</div>
+            <div class="cup" aria-hidden="true">🥤</div>
+          </div>
+
+          <div class="checker"></div>
+
+          <p id="status">Easy Mode: use cameras and door lights.</p>
+          <button id="openCams" class="monitorButton">RAISE MONITOR</button>
+          <div class="usage">USAGE: <span id="usageBars">▮</span></div>
+        </section>
+
+        <aside class="doorPanel">
+          <div class="doorFrame">
+            <div id="rightDoorVisual" class="metalDoor"></div>
+            <div id="rightVisitor" class="doorVisitor">SPRING BONNIE</div>
+          </div>
+          <button id="rightLight">RIGHT LIGHT</button>
+          <button id="rightDoor">RIGHT DOOR: OPEN</button>
+          <div id="rightGlow" class="hallGlow"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="cams" class="screen cameraScreen">
+      <header class="hud">
+        <span id="camName">CAM 1 — Main Stage</span>
+        <span id="camPower">Power 100%</span>
+        <span class="easyBadge">EASY</span>
+      </header>
+
+      <div class="monitorShell">
+        <div id="cameraRoom" class="cameraRoom room-stage">
+          <div id="roomLabel" class="roomLabel">MAIN STAGE</div>
+
+          <div class="stageCurtain curtainLeft"></div>
+          <div class="stageCurtain curtainRight"></div>
+          <div class="stageFloor"></div>
+
+          <div class="roomProps diningProps">
+            <div class="table t1"></div>
+            <div class="table t2"></div>
+            <div class="table t3"></div>
+          </div>
+
+          <div class="roomProps partyProps">
+            <div class="partyBanner">HAPPY BIRTHDAY</div>
+            <div class="gift g1">🎁</div>
+            <div class="gift g2">🎁</div>
+          </div>
+
+          <div class="roomProps safeProps">
+            <div class="shelf"></div>
+            <div class="spareHead">◉</div>
+            <div class="box">BOX</div>
+          </div>
+
+          <div class="animatronicView">
+            <div id="fredbearFigure" class="animatronic fredbear hiddenChar" aria-label="Fredbear">
+              <div class="bearEars"><i></i><i></i></div>
+              <div class="head"><span class="eye leftEye"></span><span class="eye rightEye"></span><span class="muzzle"></span></div>
+              <div class="body"><span class="bow"></span></div>
+              <div class="nameTag">FREDBEAR</div>
+            </div>
+
+            <div id="springBonnieFigure" class="animatronic springbonnie hiddenChar" aria-label="Spring Bonnie">
+              <div class="bunnyEars"><i></i><i></i></div>
+              <div class="head"><span class="eye leftEye"></span><span class="eye rightEye"></span><span class="muzzle"></span></div>
+              <div class="body"><span class="bow"></span></div>
+              <div class="nameTag">SPRING BONNIE</div>
+            </div>
+          </div>
+        </div>
+        <div id="staticOverlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="map">
+        <button data-cam="0">CAM 1<br>MAIN STAGE</button>
+        <button data-cam="1">CAM 2<br>DINING</button>
+        <button data-cam="2">CAM 3<br>PARTY HALL</button>
+        <button data-cam="3">CAM 4<br>SAFE ROOM</button>
+      </div>
+
+      <button id="closeCams" class="monitorButton">LOWER MONITOR</button>
+    </section>
+
+    <section id="gameOver" class="screen center">
+      <div id="jumpscareBox" class="jumpscareBox">
+        <div id="jumpFace" class="jumpFace">
+          <div id="jumpEars" class="jumpEars"><i></i><i></i></div>
+          <div id="jumpHead" class="jumpHead">
+            <span class="jumpEye"></span>
+            <span class="jumpEye"></span>
+            <span class="jumpMouth"></span>
+          </div>
+        </div>
+        <h1 id="jumpName">JUMPSCARE!</h1>
+      </div>
+      <h1>GAME OVER</h1>
+      <p id="gameOverText">The office wasn't secure.</p>
+      <button id="retry">RETRY NIGHT</button>
+    </section>
+
+    <section id="win" class="screen center">
+      <h1 class="sixAM">6 AM</h1>
+      <p id="winText">Night complete!</p>
+      <button id="nextNight">NEXT NIGHT</button>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
